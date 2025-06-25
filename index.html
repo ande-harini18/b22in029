@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Career Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Career Tracker</h1>
+        <div class="header-user">
+            <span id="welcome-message"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div class="summary">
+                <div class="card">
+                    <h3>Total Activities</h3>
+                    <p id="total-activities">0</p>
+                </div>
+                <div class="card">
+                    <h3>Courses Completed</h3>
+                    <p id="courses-completed">0</p>
+                </div>
+                <div class="card">
+                    <h3>Skills Learned</h3>
+                    <p id="skills-learned">0</p>
+                </div>
+                <div class="card">
+                    <h3>Internships</h3>
+                    <p id="internships-total">0</p>
+                </div>
+                <div class="card">
+                    <h3>Certifications</h3>
+                    <p id="certifications-total">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="controls">
+            <button id="add-entry-btn">Add New Entry</button>
+            <button id="view-stats-btn">View Stats</button>
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Search by title...">
+                <select id="filter-category">
+                    <option value="all">All Categories</option>
+                    <option value="course">Course</option>
+                    <option value="certification">Certification</option>
+                    <option value="skill">Skill</option>
+                    <option value="internship">Internship</option>
+                    <option value="goal">Goal</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="timeline">
+            <h2>My Career Journey</h2>
+            <ul id="timeline-list">
+                <!-- Entries will be dynamically added here -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Modal for adding new entry -->
+    <div id="add-entry-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Career Activity</h2>
+            <form id="add-entry-form">
+                <label for="category">Category:</label>
+                <select id="entry-category" required>
+                    <option value="course">Course</option>
+                    <option value="certification">Certification</option>
+                    <option value="skill">Skill</option>
+                    <option value="internship">Internship</option>
+                    <option value="goal">Goal</option>
+                </select>
+
+                <label for="title">Title:</label>
+                <input type="text" id="entry-title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="entry-description"></textarea>
+
+                <label for="date">Date:</label>
+                <input type="date" id="entry-date" required>
+
+                <button type="submit">Add Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div id="stats-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>My Statistics</h2>
+            <div id="stats-content">
+                <!-- Stats will be dynamically injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
